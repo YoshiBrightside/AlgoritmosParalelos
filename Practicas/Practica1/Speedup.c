@@ -21,13 +21,14 @@ int main(int argc, char** argv){
 		exit(1);
 	}
 
-	int velocidad_secuencial, velocidad_paralela, procesadores;
+	float velocidad_secuencial, velocidad_paralela;
+	int procesadores;
 
-	sscanf(argv[1], "%i", &velocidad_secuencial);
-	sscanf(argv[2], "%i", &velocidad_paralela);
+	sscanf(argv[1], "%f", &velocidad_secuencial);
+	sscanf(argv[2], "%f", &velocidad_paralela);
 	sscanf(argv[3], "%i", &procesadores);
 
-	printf("El speedup es de %f \n", (float)velocidad_secuencial/(velocidad_paralela/procesadores));
+	printf("El speedup es de %f para %i procesadores\n", velocidad_secuencial/velocidad_paralela, procesadores);
 	exit(1);
 
 }

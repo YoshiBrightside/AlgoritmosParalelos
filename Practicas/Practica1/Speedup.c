@@ -5,8 +5,8 @@
 
 /*
 * Codigo de speedup para la practica 1.
-* Mide cuántas veces más rápido es el algoritmo paralelo, a comparación del algoritmo secuencial.
-* El valor ideal es n veces mayor, n siendo el número de procesos.
+* Mide cuantas veces mas rapido es el algoritmo paralelo, a comparacion del algoritmo secuencial.
+* El valor ideal es n veces mayor, n siendo el numero de procesos.
 *
 * Para compilar: gcc Speedup.c -o speedup.out -fopenmp
 */
@@ -16,7 +16,7 @@ int main(int argc, char** argv){
 	// Nos aseguramos de que el usuario de los parametros requeridos
 	if (argc < 4){
 		printf("\nPor favor, especifique la velocidad secuencial, la velocidad paralela ");
-		printf("y el número de procesadores.\n");
+		printf("y el numero de procesadores.\n");
     	printf("Ejemplo de uso: ./speedup.out 4188587 1877365 4\n\n");
 		exit(1);
 	}

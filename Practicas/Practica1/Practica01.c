@@ -8,7 +8,7 @@
 * Realiza la suma de los primeros 1,000,000,000 numeros naturales de forma paralela
 * y lleva registro del tiempo de ejecucion.
 *
-* Para Ejecutar: gcc Practica01.c -fopenmp
+* Para compilar: gcc Practica01.c -fopenmp
 */
 
 int main(int argc, char** argv){

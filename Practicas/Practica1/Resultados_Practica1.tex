@@ -8,7 +8,7 @@
 
 \title{Algoritmos Paralelos: Práctica 1}
 \author{Pedrero Gómez Joshua Jair}
-\date{3 de Febrero del 2019}
+\date{4 de Febrero del 2019}
 
 \begin{document}
 
@@ -19,7 +19,7 @@
 Dentro de la Práctica 1 fue requerida la creación de cuatro programas:
 \begin{enumerate}
 	\item \textbf{Practica01.c} \linebreak 
-	Programa que ejecuta una misma suma utilizando una diferente cantidad de hilos, los cuales simulan procesadores. Después, se entrega el tiempo transcurrido durante dicha suma.
+	Programa que ejecuta una misma suma utilizando una diferente cantidad de hilos, los cuales simulan procesadores. Después, se entrega el tiempo transcurrido durante dicha suma. Para tener una mayor precisión en el tiempo de ejecución, se calcula el tiempo 10 veces con la misma cantidad de hilos, y después se hace un promedio con sus resultados.
 	\item \textbf{Speedup.c} \linebreak
 	Programa que toma el tiempo transcurrido en un algoritmo secuencial,
 	en uno paralelo, y la cantidad de procesadores usados en dicho algoritmo paralelo. Devuelve cuantas veces es más rápido el algoritmo paralelo a comparación del secuencial.
@@ -30,18 +30,26 @@ Dentro de la Práctica 1 fue requerida la creación de cuatro programas:
 	
 \end{enumerate}
 
+\pagebreak
+
 \section{Tabla de Resultados}
 
-Ahora sí, aquí llegó la puerca.
-
-\begin{tabular}
-	
-\end{tabular}
-
-\begin{lstlisting}[language=Haskell]
-Prelude> 3+2
-5
-\end{lstlisting}
+\begin{center}
+	\begin{tabular} {||r|c|c|c|c||}
+		\hline \hline
+		\bf{Procesos} & \bf{Tiempo de Ejecución} & \bf{Speedup} & \bf{Eficiencia} & \bf{Fracción Serial} \\ \hline
+		1 & 4188587 ms & 1 & 1 & - \\ \hline
+		2 & 2099287 ms & 1.995243 & 0.997621 & 0.501192 \\ \hline
+		4 & 1877365 ms & 2.231099 & 0.557775 & 0.448210 \\ \hline
+		6 & 1872573 ms & 2.236808 & 0.372801 & 0.447066 \\ \hline
+		8 & 1868530 ms & 2.241648 & 0.280206 & 0.446100  \\ \hline
+		10 & 1860565 ms & 2.251245 & 0.225125 & 0.444199 \\ \hline
+		20 & 1867824 ms & 2.242496 & 0.112125 & 0.445932 \\ \hline
+		50 & 1875525 ms & 2.233288 & 0.044666 & 0.447770 \\ \hline
+		100 & 1876120 ms & 2.232579 & 0.022326 & 0.447912 \\ \hline
+		\hline
+	\end{tabular}
+\end{center}
 
 
 \end{document}

@@ -1,0 +1,47 @@
+% Algoritmos Paralelos 2019-2
+% Plantilla para reportes de prácticas.
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+\title{Algoritmos Paralelos: Práctica 3}
+\author{Pedrero Gómez Joshua Jair}
+\date{1 de Marzo del 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Descripción del programa}
+
+La práctica 3 requirió de la creación de un único programa solamente:
+
+\begin{enumerate}
+	\item {\bf Practica03.c} \linebreak
+	Programa que, recibiendo un número de procesadores dados por el usuario, aproxima el área bajo la curva de la siguiente función dada usando Sumas de Riemman:
+	
+	$$100-(x-10)^4+50(x-10)^2-8x$$
+	
+	$p$ puede ser un numero arbitrario entre 0 y 100, y cada procesador actuará de forma paralela haciendo 5 rectángulos cada uno. Entonces, habrá una razón de $5p$ rectángulos haciendo la aproximación de la función.
+\end{enumerate}
+
+\section{Entrada y ejecución}
+
+(Igualmente descrito dentro del archivo readme de la práctica 3).
+
+\begin{enumerate}
+	\item Ejecutar el archivo después de haber sido compilado, acompañado del número de procesadores.
+	
+	Ejemplo: 
+	
+	\begin{lstlisting}[language=c]
+	./<programa> 4
+	\end{lstlisting}
+\end{enumerate}
+
+
+
+
+\end{document}

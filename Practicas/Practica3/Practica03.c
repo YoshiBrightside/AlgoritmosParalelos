@@ -32,30 +32,29 @@ int main(int argc, char** argv){
 
 	//crea el numero de hilos necesarios, indices y agrega los elementos ingresados a un arreglo
 	omp_set_num_threads(numHilos);
-    double ancho = 14/(5*numHilos);
-    double area_total = 0;
-    double area_rectangulo = 0;
-    double punto_x;
-    double punto_y;
+    double ancho = 14.0/(5*numHilos);
+	printf("ancho por rectangulo: %lf\n", ancho);
+	double area_parcial = 0.0;
+    double area_total = 0.0;
 
 	//inicia seccion paralela
-	#pragma omp parallel private(idHilo,area_rectangulo,ancho)
+	#pragma omp parallel private(idHilo,ancho)
 	{
         //obtenemos el área a trabajar de cada hilo
 		idHilo = omp_get_thread_num();
-        int i;
+		printf("Numero de hilo: %i\n", idHilo);
+		ancho = 14.0/(5*numHilos);
+		double punto_x;;
+		double punto_y;
+        double i;
         for (i=0;i<5;i++){
-            printf("Iteracion numero %i del procesador %i\n", i,idHilo);
-            punto_x = ((double)(i+idHilo*5))*ancho;
-            printf("idHilo: %i, X: %d \n",idHilo, punto_x);
-            punto_y = 100-pow(punto_x-10,4.0)+50*pow(punto_x-10,2.0)-8.0*punto_x;
-            //printf("Y: %d\n",pow(punto_x-10,4.0));
-            //printf("Procesador %i, punto y %d, area total %d\n",idHilo,punto_y,area_total);
-            area_rectangulo = punto_y*ancho;
-            area_total += area_rectangulo;
+			punto_x = (ancho*idHilo*5)+(ancho*i)+3;
+            punto_y = 100.0-pow(punto_x-10,4.0)+50.0*pow(punto_x-10,2.0)-8.0*punto_x;
+            printf("En el procesador %i, para el punto %lf Y es: %lf\n", idHilo, punto_x, punto_y);
+            area_total += punto_y*ancho;
+			printf("Se agrega %lf para un area total de %lf\n\n",punto_y*ancho,area_total);
         }
 	} //fin de seccion paralela
-
-    printf("Area total: %d\n", area_total);
+    printf("Area total: %lf\n", area_total);
 	//imprime el resultado
 }
